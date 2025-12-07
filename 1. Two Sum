@@ -1,0 +1,13 @@
+func twoSum(nums []int, target int) []int {
+    mp := make(map[int]int)
+
+    for index, num := range nums {
+        if value, exists := mp[target-num]; exists {
+            return []int{value, index}
+        }
+
+        mp[num] = index
+    }
+
+    return nil
+}
